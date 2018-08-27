@@ -11,21 +11,21 @@ public class Mysql_Jdbc {
 		// TODO Auto-generated method stub
 
 		try {
-			// ¼ÓÔØÇı¶¯
+			// åŠ è½½é©±åŠ¨
 			Class.forName("com.mysql.jdbc.Driver");
-			// Á¬½ÓÊı¾İ¿â
+			// è¿æ¥æ•°æ®åº“
 			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8",
 					"root", "root");
-			// ´´½¨Statement¶ÔÏó
-			// ×¢ÒâStatement¡¢PrepareStatementÇø±ğ
+			// åˆ›å»ºStatementå¯¹è±¡
+			// æ³¨æ„Statementã€PrepareStatementåŒºåˆ«
 			Statement st = conn.createStatement();
 			String sql = "select * from student";
-			// Ö´ĞĞsqlÓï¾ä
-			// ×¢Òâexecute¡¢executeQuery¡¢executeUpdateÇø±ğ
+			// æ‰§è¡Œsqlè¯­å¥
+			// æ³¨æ„executeã€executeQueryã€executeUpdateåŒºåˆ«
 			st.execute(sql);
-			// »ñÈ¡²éÑ¯½á¹û
+			// è·å–æŸ¥è¯¢ç»“æœ
 			ResultSet rs = st.getResultSet();
-			// ±éÀú½á¹û
+			// éå†ç»“æœ
 			while (rs.next()) {
 				System.out.println(rs.getString(2));
 			}
